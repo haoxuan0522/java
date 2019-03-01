@@ -62,7 +62,7 @@ try{
                 username_setup = line;
                 conn=DriverManager.getConnection(jdbcURL,u,p);
                 Statement setup_Statement=conn.createStatement();
-                String username_setup_Query="SELECT username FROM java_ptt_member WHERE username =" + "'" + username_setup + "'";
+                String username_setup_Query="SELECT username FROM ptt_member WHERE username =" + "'" + username_setup + "'";
                 ResultSet rs_username_setup=setup_Statement.executeQuery(username_setup_Query);
                    if(rs_username_setup.next()){
                      this.out.println("暱稱已存在");
@@ -76,7 +76,7 @@ try{
                   this.out.print("建立密碼：");
                   this.out.flush();
                   password_setup = in.readLine();
-                  String member_insert_Query="INSERT INTO java_ptt_member (username,password) VALUES ('"+username_setup+"','"+password_setup+"')";
+                  String member_insert_Query="INSERT INTO ptt_member (username,password) VALUES ('"+username_setup+"','"+password_setup+"')";
                   setup_Statement.executeUpdate(member_insert_Query);
                   this.out.println("建立成功");
                   this.out.flush();
@@ -114,7 +114,7 @@ try{
                 if(m == 0){
                     conn=DriverManager.getConnection(jdbcURL,u,p);
                     Statement login_Statement=conn.createStatement();
-                    String username_login_Query="SELECT username FROM java_ptt_member WHERE username =" + "'" + username_login + "'";
+                    String username_login_Query="SELECT username FROM ptt_member WHERE username =" + "'" + username_login + "'";
                     ResultSet rs_username_login=login_Statement.executeQuery(username_login_Query);
                     if(!(rs_username_login.next())){
                        this.out.println("查無此暱稱");
@@ -134,7 +134,7 @@ try{
                       password_login=in.readLine();
                       conn=DriverManager.getConnection(jdbcURL,u,p);
                       Statement login_Statement=conn.createStatement();
-                      String password_login_Query="SELECT password FROM java_ptt_member WHERE password =" + "'" + password_login + "'";
+                      String password_login_Query="SELECT password FROM ptt_member WHERE password =" + "'" + password_login + "'";
                       ResultSet rs_password_login=login_Statement.executeQuery(password_login_Query);   
                       if(rs_password_login.next()){
                           this.out.println("登入成功");
@@ -169,7 +169,7 @@ try{
                                     if(write_content_next != ""){
                                          conn=DriverManager.getConnection(jdbcURL,u,p);
                                          Statement write_Statement=conn.createStatement();
-                                         String write_insert_Query="INSERT INTO java_ptt_article (id,title,content,username) VALUES (null,'"+write_title+"','"+write_content_next+"','"+username_login+"')";
+                                         String write_insert_Query="INSERT INTO ptt_article (id,title,content,username) VALUES (null,'"+write_title+"','"+write_content_next+"','"+username_login+"')";
                                          write_Statement.executeUpdate(write_insert_Query);
                                          write_Statement.close();
                                          conn.close();
@@ -183,7 +183,7 @@ try{
                                 int write_count = 0;
                                 conn=DriverManager.getConnection(jdbcURL,u,p);
                                 Statement article_Statement=conn.createStatement();
-                                String article_Query="SELECT id,title,username FROM java_ptt_article";
+                                String article_Query="SELECT id,title,username FROM ptt_article";
                                 ResultSet rs_article=article_Statement.executeQuery(article_Query); 
                                 while(h == 0){
                                     while(rs_article.next()){
@@ -215,7 +215,7 @@ try{
                                         this.out.println("輸入要觀看的文章編號：");
                                         this.out.flush();
                                         article_id = Integer.parseInt(in.readLine());
-                                        String article_look_Query="SELECT content FROM java_ptt_article WHERE id=" + "'" + article_id + "'";
+                                        String article_look_Query="SELECT content FROM ptt_article WHERE id=" + "'" + article_id + "'";
                                         ResultSet rs_article_look=article_Statement.executeQuery(article_look_Query);
                                         if(rs_article_look.next()){
                                             this.out.println(rs_article_look.getString(1));
