@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Draw/src"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="Draw/build/classes/jdbc/sqljdbc_6.4/enu/mssql-jdbc-6.4.0.jre7.jar"/>
+	<classpathentry kind="lib" path="Draw/build/classes/jdbc/sqljdbc_6.4/enu/mssql-jdbc-6.4.0.jre8.jar"/>
+	<classpathentry kind="lib" path="Draw/build/classes/jdbc/sqljdbc_6.4/enu/mssql-jdbc-6.4.0.jre9.jar"/>
+	<classpathentry kind="lib" path="Draw/build/classes/jdbc/sqljdbc41/sqljdbc41.jar"/>
+	<classpathentry kind="lib" path="Draw/build/classes/jdbc/sqljdbc42/sqljdbc42.jar"/>
+	<classpathentry kind="lib" path="Draw/build/classes/ServerSocket/ptt/dist/lib/mysql-connector-java-5.1.42-bin.jar"/>
+	<classpathentry kind="lib" path="Draw/build/classes/ServerSocket/ptt/dist/ptt.jar"/>
+	<classpathentry kind="lib" path="Draw/build/classes/zxc1/dist/zxc1.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
